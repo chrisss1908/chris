@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f5f7fb" />
+  <title>Northstar — Student Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="Northstar home">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span>northstar<span class="brand-dot">.</span></span>
+      </a>
+      <div class="school-label">STUDENT WORKSPACE</div>
+      <nav class="nav-menu" aria-label="Main navigation">
+        <button class="nav-link active" data-page="dashboard"><span class="nav-icon">▦</span> Dashboard</button>
+        <button class="nav-link" data-page="schedule"><span class="nav-icon">▤</span> Class schedule</button>
+        <button class="nav-link" data-page="grades"><span class="nav-icon">◫</span> Grades</button>
+        <button class="nav-link" data-page="announcements"><span class="nav-icon">◉</span> Announcements <i class="nav-count">3</i></button>
+        <button class="nav-link" data-page="profile"><span class="nav-icon">♙</span> My profile</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card">
+          <div class="help-icon">✦</div>
+          <strong>Need a hand?</strong>
+          <p>Visit the student help center for support and answers.</p>
+          <a href="mailto:studenthelp@example.edu">Get support <span>↗</span></a>
+        </div>
+        <div class="sidebar-user">
+          <div class="avatar avatar-small">JD</div>
+          <div><strong>Jordan Davis</strong><small>Student account</small></div>
+          <button class="more-btn" aria-label="More options">···</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+        <div class="breadcrumb">Workspace <span>/</span> <strong id="breadcrumbPage">Dashboard</strong></div>
+        <div class="top-actions">
+          <span class="term-pill"><span class="status-dot"></span> Fall semester 2026</span>
+          <button class="icon-button notification-button" id="notificationButton" aria-label="Notifications">♧<i></i></button>
+          <div class="top-avatar">JD</div>
+        </div>
+      </header>
+
+      <div class="page-wrap">
+        <section class="page active" id="page-dashboard">
+          <div class="welcome-row">
+            <div><div class="eyebrow" id="todayLabel">MONDAY, NOVEMBER 25, 2026</div><h1>Good afternoon, Jordan <span class="wave">✦</span></h1><p class="subheading">Here's what's happening with your learning today.</p></div>
+            <button class="primary-button" data-go="schedule">＋ View my schedule</button>
+          </div>
+          <div class="hero-card">
+            <div class="hero-copy"><span class="hero-kicker">YOUR LEARNING JOURNEY</span><h2>Small steps.<br><em>Big possibilities.</em></h2><p>You're building something great. Keep showing up, stay curious, and make today count.</p><button class="hero-button" data-go="grades">Explore your progress <span>→</span></button></div>
+            <div class="hero-art" aria-hidden="true"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="art-ring"></div><div class="art-card card-back"></div><div class="art-card card-front"><div class="mini-line"></div><div class="mini-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="mini-caption">YOUR PROGRESS <b>↗</b></div></div><div class="sparkle s1">✳</div><div class="sparkle s2">✦</div><div class="sparkle s3">·</div></div>
+            <div class="hero-number"><strong>86<span>%</span></strong><small>Overall average</small></div>
+          </div>
+
+          <div class="section-heading"><div><h2>Your overview</h2><p>A quick look at your semester so far.</p></div><button class="text-button" data-go="grades">View all grades <span>→</span></button></div>
+          <div class="stats-grid">
+            <article class="stat-card"><div class="stat-top"><span class="stat-icon purple">▤</span><span class="trend positive">↗ 8.2%</span></div><strong>6</strong><span class="stat-label">Enrolled courses</span><small>Across this semester</small></article>
+            <article class="stat-card"><div class="stat-top"><span class="stat-icon mint">◷</span><span class="trend neutral">On track</span></div><strong>94<span class="stat-unit">%</span></strong><span class="stat-label">Attendance rate</span><small>2 days absent this term</small></article>
+            <article class="stat-card"><div class="stat-top"><span class="stat-icon peach">☆</span><span class="trend positive">↗ 2.4%</span></div><strong>86<span class="stat-unit">%</span></strong><span class="stat-label">Grade average</span><small>You're doing great!</small></article>
+            <article class="stat-card"><div class="stat-top"><span class="stat-icon blue">◷</span><span class="trend neutral">This week</span></div><strong>4</strong><span class="stat-label">Upcoming tasks</span><small>2 due in the next 48 hours</small></article>
+          </div>
+
+          <div class="content-grid">
+            <section class="panel schedule-panel"><div class="panel-heading"><div><h2>Today's classes</h2><p>Your schedule for Wednesday</p></div><button class="more-link" data-go="schedule">Full schedule →</button></div><div class="class-list" id="todayClasses"></div></section>
+            <section class="panel announcement-panel"><div class="panel-heading"><div><h2>Latest announcements</h2><p>Updates from your campus</p></div><button class="more-link" data-go="announcements">See all →</button></div><div class="announcement-list" id="latestAnnouncements"></div></section>
+          </div>
+          <div class="quote-strip"><span>✳</span><p>“The beautiful thing about learning is that no one can take it away from you.”</p><small>— B.B. King</small></div>
+        </section>
+
+        <section class="page" id="page-schedule">
+          <div class="page-title-row"><div><div class="eyebrow">PLAN YOUR WEEK</div><h1>Class schedule</h1><p class="subheading">Stay organized and know what's coming up.</p></div><button class="secondary-button" id="printSchedule">↧ Print schedule</button></div>
+          <div class="panel schedule-full"><div class="schedule-toolbar"><div><h2>Weekly timetable</h2><p>Fall semester · November 23–27, 2026</p></div><div class="week-switch"><button id="prevWeek" aria-label="Previous week">‹</button><span id="weekLabel">Nov 23 – 27</span><button id="nextWeek" aria-label="Next week">›</button></div></div><div class="timetable-wrap"><div class="timetable" id="timetable"></div></div><div class="schedule-legend"><span><i class="legend-dot lavender"></i> Lecture</span><span><i class="legend-dot green"></i> Laboratory</span><span><i class="legend-dot orange"></i> Seminar</span></div></div>
+        </section>
+
+        <section class="page" id="page-grades">
+          <div class="page-title-row"><div><div class="eyebrow">YOUR ACADEMIC PROGRESS</div><h1>Grades & results</h1><p class="subheading">A snapshot of how you're doing in each course.</p></div><span class="term-pill">Fall semester 2026</span></div>
+          <div class="grade-summary"><div><span>Overall average</span><strong>86.4<small>%</small></strong><small class="grade-note">↗ 2.4% from last semester</small></div><div class="grade-divider"></div><div><span>Completed credits</span><strong>18<small> / 24</small></strong><small class="grade-note">6 credits in progress</small></div><div class="grade-divider"></div><div><span>Academic standing</span><strong class="standing">Good</strong><small class="grade-note">Keep up the momentum</small></div></div>
+          <div class="panel grades-panel"><div class="panel-heading"><div><h2>Course performance</h2><p>Current grades based on submitted assessments.</p></div><select id="gradeFilter" class="select-control" aria-label="Filter grades"><option value="all">All courses</option><option value="high">90% and above</option><option value="mid">80% – 89%</option><option value="low">Below 80%</option></select></div><div class="table-wrap"><table><thead><tr><th>COURSE</th><th>INSTRUCTOR</th><th>UNITS</th><th>GRADE</th><th>PROGRESS</th><th>STATUS</th></tr></thead><tbody id="gradesTable"></tbody></table></div><p class="demo-note">Demo data for preview purposes. Replace with your official academic records.</p></div>
+        </section>
+
+        <section class="page" id="page-announcements">
+          <div class="page-title-row"><div><div class="eyebrow">CAMPUS BULLETIN</div><h1>Announcements</h1><p class="subheading">The latest news, reminders, and updates from your school.</p></div><span class="unread-pill">3 new updates</span></div>
+          <div class="announcement-filters"><button class="filter-chip selected" data-filter="all">All updates</button><button class="filter-chip" data-filter="academic">Academic</button><button class="filter-chip" data-filter="events">Events</button><button class="filter-chip" data-filter="reminders">Reminders</button></div>
+          <div class="announcement-feed" id="announcementFeed"></div>
+        </section>
+
+        <section class="page" id="page-profile">
+          <div class="page-title-row"><div><div class="eyebrow">YOUR ACCOUNT</div><h1>My profile</h1><p class="subheading">Manage your personal and academic information.</p></div><button class="primary-button" id="editProfile">✎ Edit profile</button></div>
+          <div class="profile-layout"><section class="panel profile-card"><div class="profile-cover"></div><div class="profile-main"><div class="profile-avatar">JD</div><h2 id="profileName">Jordan Davis</h2><p class="profile-course">Bachelor of Science in Information Technology</p><span class="student-badge">✦ Active student</span><div class="profile-meta"><div><small>STUDENT ID</small><strong>2026-01482</strong></div><div><small>YEAR LEVEL</small><strong>3rd Year</strong></div><div><small>SECTION</small><strong>BSIT-3A</strong></div></div></div></section>
+          <section class="panel details-panel"><div class="panel-heading"><div><h2>Personal information</h2><p>Your registered student details.</p></div><span class="lock-label">▣ Private</span></div><div class="details-grid"><div><small>FULL NAME</small><strong id="detailName">Jordan Davis</strong></div><div><small>EMAIL ADDRESS</small><strong id="detailEmail">jordan.davis@example.edu</strong></div><div><small>PHONE NUMBER</small><strong id="detailPhone">+63 912 345 6789</strong></div><div><small>DATE OF BIRTH</small><strong>August 14, 2005</strong></div><div><small>PROGRAM</small><strong>BS Information Technology</strong></div><div><small>EXPECTED GRADUATION</small><strong>May 2027</strong></div></div></section></div>
+        </section>
+      </div>
+      <footer class="footer"><span>© 2026 Northstar Student Portal</span><span>Made for learning <b>✦</b></span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <dialog id="profileDialog"><form method="dialog" id="profileForm"><div class="dialog-head"><div><span class="eyebrow">ACCOUNT SETTINGS</span><h2>Edit your profile</h2></div><button class="close-dialog" value="cancel" aria-label="Close">×</button></div><label>Full name<input id="editName" required value="Jordan Davis"></label><label>Email address<input id="editEmail" type="email" required value="jordan.davis@example.edu"></label><label>Phone number<input id="editPhone" value="+63 912 345 6789"></label><div class="dialog-actions"><button class="secondary-button" value="cancel">Cancel</button><button class="primary-button" id="saveProfile" value="default">Save changes</button></div></form></dialog>
+  <script src="script.js"></script>
+</body>
+</html>
